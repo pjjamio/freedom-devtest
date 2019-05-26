@@ -1,0 +1,410 @@
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,700&display=swap')
+@import url('https://necolas.github.io/normalize.css/8.0.1/normalize.css')
+
+$rouge: #F75A58
+$slate: #51545D
+$cement: #E0E4E5
+$canary: #FEF76F
+
+@mixin medium
+    @media only screen and (max-width: 992px)
+        @content
+
+@mixin small
+    @media only screen and (max-width: 768px)
+        @content
+
+body
+    font-family: 'Work Sans', sans-serif
+    padding: 0
+    margin: 0
+    background: white
+
+h1,h2,h3,h4,h5,h6
+    margin: 0 0 20px 0
+
+p
+    margin: 0 0 20px 0
+
+a
+    text-decoration: none
+    color: $rouge
+    &:hover
+        color: $slate
+        transition: all 0.5s ease-out
+
+.container
+    position: relative
+
+.mobile_toggle
+    position: fixed
+    top: 80px
+    right: 40px
+    display: none
+    @include small
+        display: block
+
+.mobile_menu
+    position: fixed
+    top: 34px
+    background: rgba(255,255,255,0.95)
+    height: 100%
+    width: calc(100% - 80px)
+    padding: 40px
+    z-index: 999
+    display: none
+    .col
+        display: flex
+        justify-content: space-between
+        align-items: center
+    .menu
+        flex-direction: column
+        align-items: start
+        margin: 20px 0
+        padding: 20px 0 0 0
+        overflow-y: scroll
+        min-height: 320px
+        flex-wrap: nowrap
+        li
+            width: 100%
+            margin: 0 0 10px 0
+            a
+                display: block
+            ul
+                display: none
+                position: relative
+                width: auto
+                padding: 0
+                border-top: 2px solid $slate
+                li
+                    margin: 0
+                    a
+                        background: #f2f2f2
+                        border-top: 0
+                        &:hover
+                            background: $rouge
+                    &:last-child
+                        a
+                            padding: 11px 10px
+                            border-bottom-left-radius: 0
+                            border-bottom-right-radius: 0
+        li.border
+            margin: 10px 0 20px 0
+            a
+                width: 138px
+                text-align: center
+
+
+.row
+    width: 100%
+
+.cont
+    margin: 0 auto
+
+.top
+    background: $rouge
+    padding: 9px 0 8px 0
+    color: white
+    .cont
+        width: 1198px
+        margin: 0 auto
+        text-align: right !important
+        @include small
+            width: 90%
+    @include small
+        position: fixed
+        top: 0
+        left: 0
+        width: 100%
+    a
+        color: white
+        font-weight: 700
+
+#header
+    height: 729px
+    @include small
+        height: auto
+        padding: 160px 0
+    .cont
+        text-align: center
+
+.logo
+    margin: 30px 0 0 0
+    @include small
+        margin: 0 0 40px 0
+        display: none
+
+.desktop_menu
+    width: 1050px
+    margin: auto
+    @include small
+        display: none
+
+.menu
+    margin: 34px 0
+    padding: 0
+    list-style: none
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-wrap: wrap
+    li
+        margin: 8px 8px 20px 8px
+        position: relative
+        ul
+            display: none
+            position: absolute
+            list-style: none
+            margin: 0
+            padding: 20px 0 0 0
+            width: 100%
+            z-index: 1
+            li
+                margin: 0
+                a
+                    background: white
+                    display: block
+                    padding: 11px 10px
+                    border-top: 1px solid $slate
+                    color: $slate
+                    font-weight: 300
+                    &:hover
+                        background: $rouge
+                        color: white
+                &:last-child
+                    a
+                        border-bottom-left-radius: 20px
+                        border-bottom-right-radius: 20px
+                        padding: 13px 10px 23px 10px
+        a
+            padding: 10px
+            font-weight: 500
+            &:hover
+                color: $slate
+                transition: all 0.5s ease-out
+    li.border
+        margin: 8px 4px 20px 10px
+        a
+            border: 2px solid $rouge
+            border-radius: 50px
+            padding: 6px 26px
+            &:hover
+                background: $rouge
+                color: white
+    li.colored
+        margin: 8px 0 20px 4px
+        a
+            background: $rouge
+            color: white
+            &:hover
+                background: none
+                color: $rouge
+    li.menu-item-has-children i
+        font-size: 12px
+        color: $rouge
+    
+.head
+    width: 842px
+    margin: 104px auto 0 auto
+    background: white
+    padding: 26px 20px
+    @include small
+        width: 80%
+        margin: 0 auto
+        padding: 30px 20px
+    .headline
+        font-size: 50px
+        font-weight: 700
+        color: $rouge
+        @include small
+            font-size: 30px
+    .sub-headline
+        font-size: 30px
+        color: $slate
+        margin-bottom: 0
+        @include small
+            font-size: 22px
+.content
+    .cont
+        display: flex
+        flex-direction: row
+        width: 1196px
+        margin: 0 auto 30px auto
+        padding: 65px 0
+        align-items: center
+        justify-content: space-between
+        @include small
+            flex-direction: column
+            padding: 30px 0
+            width: 100%
+        .left
+            width: 578px
+            @include small
+                width: auto
+                padding: 0 30px
+        .right
+            width: 50%
+            margin: 0 0 0 103px
+            @include small
+                width: auto
+                margin: 30px 0 0 0
+            img
+                max-width: 100%
+        .headline
+            font-size: 50px
+            font-weight: 700
+            color: $rouge
+            @include small
+                font-size: 30px
+        .sub-headline
+            font-size: 30px
+            color: $slate
+            display: flex
+            align-items: center
+            @include small
+                font-size: 30px
+            img
+                margin-right: 20px
+        .desc
+            color: $slate
+            p
+                font-weight: 300
+            ul
+                list-style: none
+                padding: 0
+                li
+                    background: url(../img/check.png) no-repeat 0 0
+                    margin: 0 0 12px 0
+                    min-height: 32px
+                    padding: 0 0 0 50px
+                    font-weight: 300
+                    &:last-child
+                        margin: 0
+        .bg-color
+            position: absolute
+            right: 0
+            width: 50%
+            z-index: -1
+            @include small
+                display: none
+            &.pos_top
+                margin: -70px 0 0 0
+            &.pos_bottom
+                margin: 60px 0 0 0
+            &.pos_center
+                margin: 0
+        &:last-child
+            margin: 0 auto
+            
+    .cont.reverse
+        flex-direction: row-reverse
+        .right
+            margin: 0 103px 0 0
+            @include small
+                margin: 30px 0 0 0
+        @include small
+            flex-direction: column
+        .bg-color
+            position: absolute
+            left: 0
+            width: 50%
+    
+
+.footer
+    background: url(../img/footer_bg.png) no-repeat center bottom
+    background-size: cover
+    .cont
+        width: 1160px
+        margin: 0 auto
+        padding: 40px 0
+        text-align: center
+        @include small
+            width: 90%
+        .headline
+            font-size: 50px
+            font-weight: 700
+            color: $rouge
+            @include small
+                font-size: 30px
+        .sub-headline
+            font-size: 30px
+            color: $slate
+            @include small
+                font-size: 30px
+        .desc
+            color: $slate
+        .btn
+            display: block
+            width: 160px
+            background: $rouge
+            color: white
+            border-radius: 25px
+            padding: 8px 10px
+            margin: 40px auto 0 auto
+            &:hover
+                background: $slate
+                transition: all 0.5s ease-out
+
+.footer-widgets
+    background: $cement
+    padding: 40px 0
+    border-bottom: 38px solid $rouge
+    .cont
+        display: flex
+        max-width: 1196px
+        margin: auto
+        @include small
+            flex-direction: column
+            width: 90%
+        .col
+            width: 50%
+            @include small
+                width: auto
+                text-align: center
+        .left-col
+            display: flex
+            align-items: start
+            @include small
+                margin: 0 0 30px 0
+                justify-content: center
+            img
+                margin-right: 30px
+            .widget
+                h2
+                    font-size: 16px
+                    font-weight: 500
+                    margin-bottom: 20px
+                    color: $slate
+                ul
+                    margin: 0
+                    padding: 0
+                    display: flex
+                    list-style: none
+                    li
+                        padding-right: 10px
+                        a
+                            color: $rouge
+                            font-size: 22px
+                            img
+                                margin-right: 10px
+            li
+                list-style: none
+        .right-col
+            ul
+                margin: 0 0 20px 0
+                padding: 0
+                list-style: none
+                display: flex
+                @include small
+                    justify-content: center
+                li
+                    padding-right: 40px
+                    a
+                        color: $slate
+                        font-weight: 500
+            p
+                font-weight: 400
+                color: $slate
+                margin-bottom: 0
+            li
+                list-style: none
